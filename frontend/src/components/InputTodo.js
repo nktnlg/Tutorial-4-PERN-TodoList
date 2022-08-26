@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 
 const InputTodo = () => {
 
-    const [description, setDescription] = useState('hello')
+    const [description, setDescription] = useState('default')
 
     const onSubmitForm = async e => {
         e.preventDefault();
@@ -13,7 +13,8 @@ const InputTodo = () => {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             })
-            console.log(response)
+            //useNavigate("/") if using react-router-dom
+            window.location = "/"
         } catch (error) {
            console.log(error.message) 
         }
